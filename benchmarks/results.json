@@ -1,0 +1,134 @@
+{
+  "benchmark": "LeanContext local payload microbenchmark",
+  "version": 1,
+  "generated_at": "2026-11-25T22:52:35.854488+00:00",
+  "tokenizer": {
+    "library": "tiktoken",
+    "version": "0.14.0",
+    "encoding": "o200k_base",
+    "claim": "Exact counts in this named encoding; not provider billing or model-specific quota."
+  },
+  "default_output_budget_chars": 6000,
+  "methodology": [
+    "Commands execute once; original stdout then stderr bytes supply the baseline (no added stream headings; interleaving unknown).",
+    "Returned text includes status, omission markers and artifact references.",
+    "Failure stress rows include one literal recovery response in treatment tokens.",
+    "Real source comparison explicitly uses full file vs outline plus selected source range.",
+    "No autonomous agent, frontier model, local LLM, task success A/B, or latency A/B was run.",
+    "Original protocol envelopes and tool call argument tokens are excluded from per-row counts.",
+    "MCP schema is reported separately; prompts/instructions, retries and future context replays are not measured.",
+    "Aggregate is descriptive of this artificial mix; it must not be extrapolated to real sessions."
+  ],
+  "rows": [
+    {
+      "name": "Package test suite (verbose)",
+      "category": "executed_real_project_command",
+      "baseline_tokens": 3129,
+      "returned_tokens": 1232,
+      "recovery_tokens": 0,
+      "returned_plus_recovery_tokens": 1232,
+      "reduction_pct": 60.63,
+      "baseline_bytes": 14269,
+      "returned_bytes": 4820,
+      "local_elapsed_ms": 3925.066,
+      "checks": [
+        "exit_code=0",
+        "test completion retained",
+        "raw streams recoverable"
+      ],
+      "baseline_sha256": "8f0819727598fcae1397db02913c00ba9cbb9b6d0988380c7be387fde1daf677",
+      "returned_sha256": "8be68b27ef72a9b0b2f794619408a9e039955bfb0b9b3962abe2a704b62b7527"
+    },
+    {
+      "name": "350 executed tests, one failure",
+      "category": "executed_generated_stress_fixture",
+      "baseline_tokens": 6061,
+      "returned_tokens": 1300,
+      "recovery_tokens": 49,
+      "returned_plus_recovery_tokens": 1349,
+      "reduction_pct": 77.74,
+      "baseline_bytes": 16998,
+      "returned_bytes": 3625,
+      "local_elapsed_ms": 51.354,
+      "checks": [
+        "exit_code=1",
+        "failing test retained",
+        "assertion values retained",
+        "raw recovery exact"
+      ],
+      "baseline_sha256": "4b878266368aac43e6dda2c1df95dd797a87c9b4dfb9a9da91cd0998710ec652",
+      "returned_sha256": "495113aef822e33c3d66844c89481ba0af6c633751ddf48769b5f396075f4cb6"
+    },
+    {
+      "name": "Short successful output (bad fit)",
+      "category": "executed_small_command_counterexample",
+      "baseline_tokens": 9,
+      "returned_tokens": 60,
+      "recovery_tokens": 0,
+      "returned_plus_recovery_tokens": 60,
+      "reduction_pct": -566.67,
+      "baseline_bytes": 18,
+      "returned_bytes": 136,
+      "local_elapsed_ms": 10.961,
+      "checks": [
+        "small output unchanged inside wrapper"
+      ],
+      "baseline_sha256": "eb60e8307318ecfbfedd64ee0384e65992324fd891d9f9d0ea14bf54b104e9e4",
+      "returned_sha256": "234556d0bef330f6cddf2baaae62b842c05f1b872bc3895f4befa0a325e6627d"
+    },
+    {
+      "name": "Warning-heavy compiler transcript",
+      "category": "synthetic_stress_transcript",
+      "baseline_tokens": 24616,
+      "returned_tokens": 1107,
+      "recovery_tokens": 55,
+      "returned_plus_recovery_tokens": 1162,
+      "reduction_pct": 95.28,
+      "baseline_bytes": 104561,
+      "returned_bytes": 4155,
+      "local_elapsed_ms": 8.476,
+      "checks": [
+        "fatal error prioritized",
+        "omission notice present",
+        "full artifact exact"
+      ],
+      "baseline_sha256": "1c396228976b602aeea04a635b8e8ee56a8be2d79b5223620e275f17f930de98",
+      "returned_sha256": "8d7e454ea0b6e4a47428f302fa1c41fbb946343eee281da8c3d11b883857cf20"
+    },
+    {
+      "name": "Locate command limits in real source",
+      "category": "full_file_vs_outline_and_exact_range",
+      "baseline_tokens": 1655,
+      "returned_tokens": 572,
+      "recovery_tokens": 0,
+      "returned_plus_recovery_tokens": 572,
+      "reduction_pct": 65.44,
+      "baseline_bytes": 7322,
+      "returned_bytes": 2039,
+      "local_elapsed_ms": 11.195,
+      "checks": [
+        "source lines exact",
+        "outline + range overhead included",
+        "baseline is an explicit full-file read"
+      ],
+      "baseline_sha256": "5ce49fb66440087e494a58387ff68382cea5252f713dc66f709229ae1a99a9a6",
+      "returned_sha256": "b5f496885f926dcb0654abfdb99188520ba401b7ea3c94a925571230ff932881"
+    }
+  ],
+  "aggregate_all_rows": {
+    "baseline_tokens": 35470,
+    "returned_plus_recovery_tokens": 4375,
+    "reduction_pct": 87.67
+  },
+  "mcp_tool_schema_tokens": 195,
+  "local_compaction_ms": {
+    "samples": 5,
+    "median": 8.199,
+    "min": 7.789,
+    "max": 9.164
+  },
+  "provider_tokens_saved": null,
+  "subscription_quota_saved": null,
+  "agent_task_latency_saved": null,
+  "quality_scope": "Local extraction/recovery assertions and package tests only; no end-to-end equivalence claim."
+}

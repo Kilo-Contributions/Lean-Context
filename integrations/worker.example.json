@@ -1,0 +1,8 @@
+{
+  "base_url": "http://127.0.0.1:8080/v1",
+  "model": "YOUR_LOCAL_MODEL_ID",
+  "max_input_chars": 24000,
+  "max_output_tokens": 1000,
+  "timeout": 60,
+  "allow_remote": false
+}

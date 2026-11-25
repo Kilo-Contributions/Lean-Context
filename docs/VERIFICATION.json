@@ -1,0 +1,22 @@
+{
+  "tests": 93,
+  "unit_test_command": "python -m unittest discover -q",
+  "test_status": "passed",
+  "checks": {
+    "archive_file_checksums": 44,
+    "isolated_zipapp": "LeanContext 0.1.0",
+    "project_setup_idempotent": true,
+    "official_mcp_sdk": {
+      "protocol": "2025-11-25",
+      "tool_count": 1,
+      "read_and_root_boundary": true
+    },
+    "zipapp_exit_and_binary_recovery": true,
+    "offline_wheel_install": "LeanContext 0.1.0",
+    "wheel_zipapp_source_identical": true
+  },
+  "models_called": 0,
+  "live_agent_sessions_tested": false,
+  "platform": "linux",
+  "python": "3.12.14"
+}

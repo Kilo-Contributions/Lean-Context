@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leancontext"
+version = "0.1.0"
+description = "Local evidence and output budgets for frontier coding agents"
+requires-python = ">=3.11"
+license = "CPAL-1.0"
+license-files = ["LICENSE"]
+authors = [{name = "Blaine Bouvier"}]
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+metrics = ["tiktoken>=0.9,<1"]
+
+[project.scripts]
+leancontext = "leancontext.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["leancontext*"]
+
+[tool.setuptools.package-data]
+leancontext = ["data/*"]
