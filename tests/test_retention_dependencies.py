@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import subprocess
 from tempfile import TemporaryDirectory
 import time
 import unittest
@@ -153,3 +154,17 @@ class RetentionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'linked'):
             prune(self.store, 30, apply=True, quiescent=True)
         self.assertEqual(outside.read_bytes(), b'private')
+
+    def test_cli_prune_requires_confirmation(self):
+        ref = self.store.save('disposable output')
+        self.age(ref)
+        base = [sys.executable, '-m', 'leancontext.cli', 'prune',
+                '--root', str(self.root), '--state-dir', str(self.store.base)]
+        for flags, expected, exists in (([], 0, True), (['--apply'], 2, True),
+                                        (['--apply', '--quiescent'], 0, False)):
+            result = subprocess.run(base + flags, capture_output=True, text=True,
+                                    cwd=Path(__file__).resolve().parents[1], timeout=10)
+            self.assertEqual(result.returncode, expected, result.stderr)
+            self.assertEqual(self.store._path(ref, '.gz').exists(), exists)
+            if expected == 0:
+                self.assertEqual(json.loads(result.stdout)['artifacts'], 1)
