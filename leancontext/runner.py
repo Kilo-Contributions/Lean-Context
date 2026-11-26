@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
+import hashlib
+import json
 import os
 from pathlib import Path
 import signal
@@ -10,6 +12,7 @@ import subprocess
 import tempfile
 import threading
 import time
+import uuid
 
 from .compact import compact
 from .store import Store
@@ -35,6 +38,7 @@ class RunResult:
     group_count: int = 0
     inventory_complete: bool | None = None
     budget_exceeded: bool = False
+    capture_ref: str | None = None
 
 
 def _kill_group(process: subprocess.Popen) -> None:
@@ -149,21 +153,34 @@ def run_command(argv: list[str], *, store: Store, cwd: str | Path | None = None,
     raw_ref = store.save(body, 'command-result', result_meta)
     state = 'timeout; INCOMPLETE capture' if timed_out else 'output cap; INCOMPLETE capture' if limited.is_set() else 'completed'
     header = f'[LeanContext exit={exit_code}; {state}; {elapsed:.3f}s]\n'
-    footer = f'\nRaw stdout={out_ref} stderr={err_ref}\n'
+    # Reserve the fixed-width capture reference before rendering the view.
+    footer = f'\nRaw stdout={out_ref} stderr={err_ref} capture={"0" * 24}\n'
     view = compact(body, store=store, max_chars=max_chars-len(header)-len(footer),
                    kind='command-result', metadata=result_meta, strategy=strategy)
+    # Raw references identify bytes, not invocations. A uniquely identified,
+    # content-addressed manifest preserves provenance even when identical bytes
+    # are saved again (including equal stdout and stderr).
+    capture = {'leancontext_capture': 1, 'capture_id': uuid.uuid4().hex,
+               **result_meta, 'result_ref': raw_ref,
+               'diagnostic_ref': view.diagnostic_ref,
+               'stdout_sha256': hashlib.sha256(stdout).hexdigest(),
+               'stderr_sha256': hashlib.sha256(stderr).hexdigest(),
+               'result_sha256': hashlib.sha256(body.encode('utf-8')).hexdigest()}
+    capture_ref = store.save(json.dumps(capture, ensure_ascii=False, separators=(',', ':')),
+                             kind='capture-manifest')
+    footer = f'\nRaw stdout={out_ref} stderr={err_ref} capture={capture_ref}\n'
     result_text = header + view.text + footer
     # This local ledger includes preview/reference overhead and retrieval events.
     store.record({'operation': 'run', 'original_chars': len(body),
                   'emitted_chars': len(result_text), 'original_bytes': len(stdout)+len(stderr),
                   'emitted_bytes': len(result_text.encode('utf-8')),
-                  'exit_code': exit_code, 'result_ref': raw_ref,
+                  'exit_code': exit_code, 'result_ref': raw_ref, 'capture_ref': capture_ref,
                   'elapsed_seconds': elapsed})
     return RunResult(result_text, exit_code, out_ref, err_ref, raw_ref, elapsed,
                      timed_out, limited.is_set(), len(stdout), len(stderr),
                      len(body), len(result_text), view.strategy, view.diagnostic_ref,
                      view.diagnostic_count, view.group_count, view.inventory_complete,
-                     len(result_text) > max_chars)
+                     len(result_text) > max_chars, capture_ref)
 
 
 def run_batch(commands: list[list[str]], *, store: Store, jobs: int = 1,
