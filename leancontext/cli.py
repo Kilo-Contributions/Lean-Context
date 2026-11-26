@@ -9,7 +9,6 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
-import time
 
 from . import __version__
 from .store import Store
@@ -109,6 +108,7 @@ def make_parser():
     _location(prune)
     prune.add_argument('--days', type=float, default=30)
     prune.add_argument('--apply', action='store_true')
+    prune.add_argument('--quiescent', action='store_true', help='Confirm all store readers and writers are stopped; required with --apply')
     return p
 
 
@@ -253,22 +253,8 @@ def main(argv=None) -> int:
             _json(result) if args.json else print(result['text'])
             return 0
         if args.action == 'prune':
-            if not 0 <= args.days <= 36500:
-                raise ValueError('days must be 0–36500')
-            cutoff = time.time()-args.days*86400
-            selected = []
-            for f in (store.base/'artifacts').glob('*.json'):
-                if f.is_symlink() or f.stat().st_mtime >= cutoff:
-                    continue
-                selected.append(f.stem)
-            for ref in selected:
-                if args.apply:
-                    for ext in ('.gz','.json'):
-                        p=store._path(ref,ext)
-                        if p.exists():
-                            p.unlink()
-            _json({'dry_run':not args.apply,'artifacts':len(selected),'days':args.days,
-                   'warning':'Pruned references cannot be recalled in existing conversations.', 'state_dir':str(store.base)})
+            from .retention import prune
+            _json(prune(store, args.days, apply=args.apply, quiescent=args.quiescent))
             return 0
         return 0
     except BrokenPipeError:

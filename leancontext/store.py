@@ -103,11 +103,15 @@ class Store:
         warnings = []
         for p in (self.base / 'events').glob('*.json'):
             if p.is_symlink():
+                warnings.append(f'Skipped symlink event: {p.name}')
                 continue
             try:
                 e = json.loads(p.read_text(encoding='utf-8'))
             except (OSError, ValueError):
                 warnings.append(f'Unreadable event: {p.name}')
+                continue
+            if not isinstance(e, dict):
+                warnings.append(f'Invalid event object: {p.name}')
                 continue
             counts['events'] += 1
             for k in ('original_chars', 'emitted_chars', 'original_bytes', 'emitted_bytes'):
@@ -117,5 +121,7 @@ class Store:
         counts['artifacts'] = sum(1 for _ in (self.base / 'artifacts').glob('*.gz'))
         counts['state_dir'] = str(self.base)
         counts['warnings'] = warnings
+        # Completeness of observed event-file decoding, not provider coverage.
+        counts['event_scan_complete'] = not warnings
         counts['measurement'] = 'Local text/byte volume, not provider tokens, cost, or quota.'
         return counts

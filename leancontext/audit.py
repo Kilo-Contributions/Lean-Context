@@ -245,6 +245,7 @@ def _deduplicate(rows: list[_Usage], warnings: list[str], session: str) -> tuple
     occurrences: Counter = Counter()
     duplicates = 0
     ambiguous = False
+    timestamped_overlap = False
     paths = {row.path for row in rows}
     for row in rows:
         if row.identity is not None:
@@ -256,17 +257,22 @@ def _deduplicate(rows: list[_Usage], warnings: list[str], session: str) -> tuple
             identified[key] = row
             continue
         signature = (row.source, row.timestamp, tuple(row.metrics[name] for name in METRICS))
+        # Equal timestamps and counters are not unique request IDs. Preserve
+        # multiplicity within each file, even when timestamps are present.
+        occurrences[(row.path, signature)] += 1
+        signature += (occurrences[(row.path, signature)],)
         if row.timestamp is None:
-            occurrences[(row.path, signature)] += 1
-            signature += (occurrences[(row.path, signature)],)
             ambiguous = len(paths) > 1
         if signature in seen:
             duplicates += 1
+            timestamped_overlap |= row.timestamp is not None
         else:
             seen.add(signature)
             anonymous.append(row)
     if ambiguous:
         warnings.append(f"Session {session}: overlapping untimed records lack request IDs; equal occurrences across files were deduplicated heuristically.")
+    if timestamped_overlap:
+        warnings.append(f"Session {session}: overlapping timestamped records lack request IDs; equal occurrences across files were deduplicated heuristically.")
     if any(row.source == "claude_message" and row.identity is None for row in rows):
         warnings.append(f"Session {session}: Claude message IDs are missing; repeated snapshots cannot be reliably distinguished from separate messages.")
     # Preserve the established chronological/encounter order after replacing snapshots.
