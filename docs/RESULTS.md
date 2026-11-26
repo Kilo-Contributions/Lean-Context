@@ -111,7 +111,7 @@ not establish end-to-end speedup.
 
 ## Verification performed
 
-- The full standard-library test suite passed: **93 tests**.
+- The full standard-library test suite passed: **156 tests** (152 without the optional pytest-fixture checks).
 - Coverage includes process exit codes, single execution, exact binary stream
   recovery, timeouts, cap-triggered descendant termination, diagnostic priority,
   source path boundaries, ignore handling, exact source ranges, hook schemas,

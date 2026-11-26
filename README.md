@@ -23,7 +23,10 @@ says so and keeps it. See [semantic diagnostics](docs/SEMANTIC_DIAGNOSTICS.md).
 
 ## Quick start
 
-Extract the release archive into a location you will keep. The runnable
+Download `LeanContext-0.2.0.zip` from the
+[Releases page](https://github.com/WebWalker3D/Lean-Context/releases) (or clone
+this repository; `leancontext.pyz` is checked in) and verify it with
+`sha256sum -c SHA256SUMS`. Extract the release archive into a location you will keep. The runnable
 `leancontext.pyz` is self-contained; do not move it after registering it without
 rerunning setup.
 
