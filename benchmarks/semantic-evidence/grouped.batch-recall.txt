@@ -1,0 +1,93 @@
+[LeanContext diagnostic recall; artifact 4fb84558189c9d883134d378; 3 complete record(s)]
+
+F1 FAILED test_regression.py::test_records[record-00] (call)
+_____________________________________ test_records[record-00] ______________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 0; original payload preserved in the captured log.
+
+F11 FAILED test_regression.py::test_accounts[account-00] (call)
+____________________________________ test_accounts[account-00] _____________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 0; original lookup details preserved in the captured log.
+
+F19 FAILED test_regression.py::test_transactions[transaction-00] (call)
+________________________________ test_transactions[transaction-00] _________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 0; original journal details preserved in the captured log.

@@ -68,6 +68,16 @@ class CoreTests(unittest.TestCase):
         self.store.record({'original_chars': 100, 'emitted_chars': 20})
         self.assertEqual(self.store.stats()['events'], 1)
 
+    def test_batch_diagnostic_recall_counts_as_one_recovery_call(self):
+        from leancontext.recall import recall, recall_many
+        ref = self.store.save('a.c:1:2: error: missing a\n'
+                              'b.c:3:4: error: missing b\n')
+        recalled = recall_many(self.store, ref, selectors=['D1', 'D2'], strategy='compiler')
+        self.assertEqual(recalled['selected_ids'], ['D1', 'D2'])
+        self.assertEqual(self.store.stats()['recovery_calls'], 1)
+        recall(self.store, ref)
+        self.assertEqual(self.store.stats()['recovery_calls'], 2)
+
     def test_summary_never_expands_input_and_bad_budget_rejected(self):
         for size in (0, 30, 511, 700, 1200):
             text = 'x\n' * size

@@ -1,0 +1,117 @@
+[LeanContext pytest-failures; 25 indexed diagnostics; 3 signature groups; inventory matches captured summary count]
+25 failed, 202 passed in 0.14s
+
+Failure/error index (all identified records):
+F1 [G1] FAILED test_regression.py::test_records[record-00]
+F2 [G1] FAILED test_regression.py::test_records[record-01]
+F3 [G1] FAILED test_regression.py::test_records[record-02]
+F4 [G1] FAILED test_regression.py::test_records[record-03]
+F5 [G1] FAILED test_regression.py::test_records[record-04]
+F6 [G1] FAILED test_regression.py::test_records[record-05]
+F7 [G1] FAILED test_regression.py::test_records[record-06]
+F8 [G1] FAILED test_regression.py::test_records[record-07]
+F9 [G1] FAILED test_regression.py::test_records[record-08]
+F10 [G1] FAILED test_regression.py::test_records[record-09]
+F11 [G2] FAILED test_regression.py::test_accounts[account-00]
+F12 [G2] FAILED test_regression.py::test_accounts[account-01]
+F13 [G2] FAILED test_regression.py::test_accounts[account-02]
+F14 [G2] FAILED test_regression.py::test_accounts[account-03]
+F15 [G2] FAILED test_regression.py::test_accounts[account-04]
+F16 [G2] FAILED test_regression.py::test_accounts[account-05]
+F17 [G2] FAILED test_regression.py::test_accounts[account-06]
+F18 [G2] FAILED test_regression.py::test_accounts[account-07]
+F19 [G3] FAILED test_regression.py::test_transactions[transaction-00]
+F20 [G3] FAILED test_regression.py::test_transactions[transaction-01]
+F21 [G3] FAILED test_regression.py::test_transactions[transaction-02]
+F22 [G3] FAILED test_regression.py::test_transactions[transaction-03]
+F23 [G3] FAILED test_regression.py::test_transactions[transaction-04]
+F24 [G3] FAILED test_regression.py::test_transactions[transaction-05]
+F25 [G3] FAILED test_regression.py::test_transactions[transaction-06]
+
+G1: 10 record(s); representative F1
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+
+G2: 8 record(s); representative F11
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+
+G3: 7 record(s); representative F19
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+
+Groups match observed signatures; a shared root cause is not proven.
+Repeated traces, progress and captured logs omitted; full per-record details remain available.
+Artifact 4fb84558189c9d883134d378. Recall details in one call: recall-many 4fb84558189c9d883134d378 F1 F2 (or group IDs/exact identifiers; same project --root).
+Raw output: 344737384de096352eb71db9; use line recall for omitted logs.

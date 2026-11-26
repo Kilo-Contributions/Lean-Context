@@ -1,0 +1,788 @@
+======================================= test session starts ========================================
+platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0 -- /tmp/leancontext-pytest-v02/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/leancontext-semantic-bench-1shl1gm3/distinct
+configfile: pytest.ini
+collecting ... collected 227 items
+
+test_regression.py::test_success[pass-000] PASSED                                            [  0%]
+test_regression.py::test_success[pass-001] PASSED                                            [  0%]
+test_regression.py::test_success[pass-002] PASSED                                            [  1%]
+test_regression.py::test_success[pass-003] PASSED                                            [  1%]
+test_regression.py::test_success[pass-004] PASSED                                            [  2%]
+test_regression.py::test_success[pass-005] PASSED                                            [  2%]
+test_regression.py::test_success[pass-006] PASSED                                            [  3%]
+test_regression.py::test_success[pass-007] PASSED                                            [  3%]
+test_regression.py::test_success[pass-008] PASSED                                            [  3%]
+test_regression.py::test_success[pass-009] PASSED                                            [  4%]
+test_regression.py::test_success[pass-010] PASSED                                            [  4%]
+test_regression.py::test_success[pass-011] PASSED                                            [  5%]
+test_regression.py::test_success[pass-012] PASSED                                            [  5%]
+test_regression.py::test_success[pass-013] PASSED                                            [  6%]
+test_regression.py::test_success[pass-014] PASSED                                            [  6%]
+test_regression.py::test_success[pass-015] PASSED                                            [  7%]
+test_regression.py::test_success[pass-016] PASSED                                            [  7%]
+test_regression.py::test_success[pass-017] PASSED                                            [  7%]
+test_regression.py::test_success[pass-018] PASSED                                            [  8%]
+test_regression.py::test_success[pass-019] PASSED                                            [  8%]
+test_regression.py::test_success[pass-020] PASSED                                            [  9%]
+test_regression.py::test_success[pass-021] PASSED                                            [  9%]
+test_regression.py::test_success[pass-022] PASSED                                            [ 10%]
+test_regression.py::test_success[pass-023] PASSED                                            [ 10%]
+test_regression.py::test_success[pass-024] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-025] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-026] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-027] PASSED                                            [ 12%]
+test_regression.py::test_success[pass-028] PASSED                                            [ 12%]
+test_regression.py::test_success[pass-029] PASSED                                            [ 13%]
+test_regression.py::test_success[pass-030] PASSED                                            [ 13%]
+test_regression.py::test_success[pass-031] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-032] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-033] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-034] PASSED                                            [ 15%]
+test_regression.py::test_success[pass-035] PASSED                                            [ 15%]
+test_regression.py::test_success[pass-036] PASSED                                            [ 16%]
+test_regression.py::test_success[pass-037] PASSED                                            [ 16%]
+test_regression.py::test_success[pass-038] PASSED                                            [ 17%]
+test_regression.py::test_success[pass-039] PASSED                                            [ 17%]
+test_regression.py::test_success[pass-040] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-041] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-042] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-043] PASSED                                            [ 19%]
+test_regression.py::test_success[pass-044] PASSED                                            [ 19%]
+test_regression.py::test_success[pass-045] PASSED                                            [ 20%]
+test_regression.py::test_success[pass-046] PASSED                                            [ 20%]
+test_regression.py::test_success[pass-047] PASSED                                            [ 21%]
+test_regression.py::test_success[pass-048] PASSED                                            [ 21%]
+test_regression.py::test_success[pass-049] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-050] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-051] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-052] PASSED                                            [ 23%]
+test_regression.py::test_success[pass-053] PASSED                                            [ 23%]
+test_regression.py::test_success[pass-054] PASSED                                            [ 24%]
+test_regression.py::test_success[pass-055] PASSED                                            [ 24%]
+test_regression.py::test_success[pass-056] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-057] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-058] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-059] PASSED                                            [ 26%]
+test_regression.py::test_success[pass-060] PASSED                                            [ 26%]
+test_regression.py::test_success[pass-061] PASSED                                            [ 27%]
+test_regression.py::test_success[pass-062] PASSED                                            [ 27%]
+test_regression.py::test_success[pass-063] PASSED                                            [ 28%]
+test_regression.py::test_success[pass-064] PASSED                                            [ 28%]
+test_regression.py::test_success[pass-065] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-066] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-067] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-068] PASSED                                            [ 30%]
+test_regression.py::test_success[pass-069] PASSED                                            [ 30%]
+test_regression.py::test_success[pass-070] PASSED                                            [ 31%]
+test_regression.py::test_success[pass-071] PASSED                                            [ 31%]
+test_regression.py::test_success[pass-072] PASSED                                            [ 32%]
+test_regression.py::test_success[pass-073] PASSED                                            [ 32%]
+test_regression.py::test_success[pass-074] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-075] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-076] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-077] PASSED                                            [ 34%]
+test_regression.py::test_success[pass-078] PASSED                                            [ 34%]
+test_regression.py::test_success[pass-079] PASSED                                            [ 35%]
+test_regression.py::test_success[pass-080] PASSED                                            [ 35%]
+test_regression.py::test_success[pass-081] PASSED                                            [ 36%]
+test_regression.py::test_success[pass-082] PASSED                                            [ 36%]
+test_regression.py::test_success[pass-083] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-084] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-085] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-086] PASSED                                            [ 38%]
+test_regression.py::test_success[pass-087] PASSED                                            [ 38%]
+test_regression.py::test_success[pass-088] PASSED                                            [ 39%]
+test_regression.py::test_success[pass-089] PASSED                                            [ 39%]
+test_regression.py::test_success[pass-090] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-091] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-092] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-093] PASSED                                            [ 41%]
+test_regression.py::test_success[pass-094] PASSED                                            [ 41%]
+test_regression.py::test_success[pass-095] PASSED                                            [ 42%]
+test_regression.py::test_success[pass-096] PASSED                                            [ 42%]
+test_regression.py::test_success[pass-097] PASSED                                            [ 43%]
+test_regression.py::test_success[pass-098] PASSED                                            [ 43%]
+test_regression.py::test_success[pass-099] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-100] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-101] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-102] PASSED                                            [ 45%]
+test_regression.py::test_success[pass-103] PASSED                                            [ 45%]
+test_regression.py::test_success[pass-104] PASSED                                            [ 46%]
+test_regression.py::test_success[pass-105] PASSED                                            [ 46%]
+test_regression.py::test_success[pass-106] PASSED                                            [ 47%]
+test_regression.py::test_success[pass-107] PASSED                                            [ 47%]
+test_regression.py::test_success[pass-108] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-109] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-110] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-111] PASSED                                            [ 49%]
+test_regression.py::test_success[pass-112] PASSED                                            [ 49%]
+test_regression.py::test_success[pass-113] PASSED                                            [ 50%]
+test_regression.py::test_success[pass-114] PASSED                                            [ 50%]
+test_regression.py::test_success[pass-115] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-116] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-117] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-118] PASSED                                            [ 52%]
+test_regression.py::test_success[pass-119] PASSED                                            [ 52%]
+test_regression.py::test_success[pass-120] PASSED                                            [ 53%]
+test_regression.py::test_success[pass-121] PASSED                                            [ 53%]
+test_regression.py::test_success[pass-122] PASSED                                            [ 54%]
+test_regression.py::test_success[pass-123] PASSED                                            [ 54%]
+test_regression.py::test_success[pass-124] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-125] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-126] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-127] PASSED                                            [ 56%]
+test_regression.py::test_success[pass-128] PASSED                                            [ 56%]
+test_regression.py::test_success[pass-129] PASSED                                            [ 57%]
+test_regression.py::test_success[pass-130] PASSED                                            [ 57%]
+test_regression.py::test_success[pass-131] PASSED                                            [ 58%]
+test_regression.py::test_success[pass-132] PASSED                                            [ 58%]
+test_regression.py::test_success[pass-133] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-134] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-135] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-136] PASSED                                            [ 60%]
+test_regression.py::test_success[pass-137] PASSED                                            [ 60%]
+test_regression.py::test_success[pass-138] PASSED                                            [ 61%]
+test_regression.py::test_success[pass-139] PASSED                                            [ 61%]
+test_regression.py::test_success[pass-140] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-141] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-142] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-143] PASSED                                            [ 63%]
+test_regression.py::test_success[pass-144] PASSED                                            [ 63%]
+test_regression.py::test_success[pass-145] PASSED                                            [ 64%]
+test_regression.py::test_success[pass-146] PASSED                                            [ 64%]
+test_regression.py::test_success[pass-147] PASSED                                            [ 65%]
+test_regression.py::test_success[pass-148] PASSED                                            [ 65%]
+test_regression.py::test_success[pass-149] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-150] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-151] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-152] PASSED                                            [ 67%]
+test_regression.py::test_success[pass-153] PASSED                                            [ 67%]
+test_regression.py::test_success[pass-154] PASSED                                            [ 68%]
+test_regression.py::test_success[pass-155] PASSED                                            [ 68%]
+test_regression.py::test_success[pass-156] PASSED                                            [ 69%]
+test_regression.py::test_success[pass-157] PASSED                                            [ 69%]
+test_regression.py::test_success[pass-158] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-159] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-160] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-161] PASSED                                            [ 71%]
+test_regression.py::test_success[pass-162] PASSED                                            [ 71%]
+test_regression.py::test_success[pass-163] PASSED                                            [ 72%]
+test_regression.py::test_success[pass-164] PASSED                                            [ 72%]
+test_regression.py::test_success[pass-165] PASSED                                            [ 73%]
+test_regression.py::test_success[pass-166] PASSED                                            [ 73%]
+test_regression.py::test_success[pass-167] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-168] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-169] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-170] PASSED                                            [ 75%]
+test_regression.py::test_success[pass-171] PASSED                                            [ 75%]
+test_regression.py::test_success[pass-172] PASSED                                            [ 76%]
+test_regression.py::test_success[pass-173] PASSED                                            [ 76%]
+test_regression.py::test_success[pass-174] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-175] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-176] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-177] PASSED                                            [ 78%]
+test_regression.py::test_success[pass-178] PASSED                                            [ 78%]
+test_regression.py::test_success[pass-179] PASSED                                            [ 79%]
+test_regression.py::test_success[pass-180] PASSED                                            [ 79%]
+test_regression.py::test_success[pass-181] PASSED                                            [ 80%]
+test_regression.py::test_success[pass-182] PASSED                                            [ 80%]
+test_regression.py::test_success[pass-183] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-184] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-185] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-186] PASSED                                            [ 82%]
+test_regression.py::test_success[pass-187] PASSED                                            [ 82%]
+test_regression.py::test_success[pass-188] PASSED                                            [ 83%]
+test_regression.py::test_success[pass-189] PASSED                                            [ 83%]
+test_regression.py::test_success[pass-190] PASSED                                            [ 84%]
+test_regression.py::test_success[pass-191] PASSED                                            [ 84%]
+test_regression.py::test_success[pass-192] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-193] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-194] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-195] PASSED                                            [ 86%]
+test_regression.py::test_success[pass-196] PASSED                                            [ 86%]
+test_regression.py::test_success[pass-197] PASSED                                            [ 87%]
+test_regression.py::test_success[pass-198] PASSED                                            [ 87%]
+test_regression.py::test_success[pass-199] PASSED                                            [ 88%]
+test_regression.py::test_success[pass-200] PASSED                                            [ 88%]
+test_regression.py::test_success[pass-201] PASSED                                            [ 88%]
+test_regression.py::test_distinct[distinct-00] FAILED                                        [ 89%]
+test_regression.py::test_distinct[distinct-01] FAILED                                        [ 89%]
+test_regression.py::test_distinct[distinct-02] FAILED                                        [ 90%]
+test_regression.py::test_distinct[distinct-03] FAILED                                        [ 90%]
+test_regression.py::test_distinct[distinct-04] FAILED                                        [ 91%]
+test_regression.py::test_distinct[distinct-05] FAILED                                        [ 91%]
+test_regression.py::test_distinct[distinct-06] FAILED                                        [ 92%]
+test_regression.py::test_distinct[distinct-07] FAILED                                        [ 92%]
+test_regression.py::test_distinct[distinct-08] FAILED                                        [ 92%]
+test_regression.py::test_distinct[distinct-09] FAILED                                        [ 93%]
+test_regression.py::test_distinct[distinct-10] FAILED                                        [ 93%]
+test_regression.py::test_distinct[distinct-11] FAILED                                        [ 94%]
+test_regression.py::test_distinct[distinct-12] FAILED                                        [ 94%]
+test_regression.py::test_distinct[distinct-13] FAILED                                        [ 95%]
+test_regression.py::test_distinct[distinct-14] FAILED                                        [ 95%]
+test_regression.py::test_distinct[distinct-15] FAILED                                        [ 96%]
+test_regression.py::test_distinct[distinct-16] FAILED                                        [ 96%]
+test_regression.py::test_distinct[distinct-17] FAILED                                        [ 96%]
+test_regression.py::test_distinct[distinct-18] FAILED                                        [ 97%]
+test_regression.py::test_distinct[distinct-19] FAILED                                        [ 97%]
+test_regression.py::test_distinct[distinct-20] FAILED                                        [ 98%]
+test_regression.py::test_distinct[distinct-21] FAILED                                        [ 98%]
+test_regression.py::test_distinct[distinct-22] FAILED                                        [ 99%]
+test_regression.py::test_distinct[distinct-23] FAILED                                        [ 99%]
+test_regression.py::test_distinct[distinct-24] FAILED                                        [100%]
+
+============================================= FAILURES =============================================
+____________________________________ test_distinct[distinct-00] ____________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 0
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 00 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 00; this is a separate exception message.
+____________________________________ test_distinct[distinct-01] ____________________________________
+
+case = 1
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 1
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 01 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 01; this is a separate exception message.
+____________________________________ test_distinct[distinct-02] ____________________________________
+
+case = 2
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 2
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 02 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 02; this is a separate exception message.
+____________________________________ test_distinct[distinct-03] ____________________________________
+
+case = 3
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 3
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 03 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 03; this is a separate exception message.
+____________________________________ test_distinct[distinct-04] ____________________________________
+
+case = 4
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 4
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 04 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 04; this is a separate exception message.
+____________________________________ test_distinct[distinct-05] ____________________________________
+
+case = 5
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 5
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 05 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 05; this is a separate exception message.
+____________________________________ test_distinct[distinct-06] ____________________________________
+
+case = 6
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 6
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 06 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 06; this is a separate exception message.
+____________________________________ test_distinct[distinct-07] ____________________________________
+
+case = 7
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 7
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 07 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 07; this is a separate exception message.
+____________________________________ test_distinct[distinct-08] ____________________________________
+
+case = 8
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 8
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 08 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 08; this is a separate exception message.
+____________________________________ test_distinct[distinct-09] ____________________________________
+
+case = 9
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 9
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 09 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 09; this is a separate exception message.
+____________________________________ test_distinct[distinct-10] ____________________________________
+
+case = 10
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 10
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 10 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 10; this is a separate exception message.
+____________________________________ test_distinct[distinct-11] ____________________________________
+
+case = 11
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 11
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 11 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 11; this is a separate exception message.
+____________________________________ test_distinct[distinct-12] ____________________________________
+
+case = 12
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 12
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 12 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 12; this is a separate exception message.
+____________________________________ test_distinct[distinct-13] ____________________________________
+
+case = 13
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 13
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 13 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 13; this is a separate exception message.
+____________________________________ test_distinct[distinct-14] ____________________________________
+
+case = 14
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 14
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 14 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 14; this is a separate exception message.
+____________________________________ test_distinct[distinct-15] ____________________________________
+
+case = 15
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 15
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 15 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 15; this is a separate exception message.
+____________________________________ test_distinct[distinct-16] ____________________________________
+
+case = 16
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 16
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 16 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 16; this is a separate exception message.
+____________________________________ test_distinct[distinct-17] ____________________________________
+
+case = 17
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 17
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 17 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 17; this is a separate exception message.
+____________________________________ test_distinct[distinct-18] ____________________________________
+
+case = 18
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 18
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 18 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 18; this is a separate exception message.
+____________________________________ test_distinct[distinct-19] ____________________________________
+
+case = 19
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 19
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 19 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 19; this is a separate exception message.
+____________________________________ test_distinct[distinct-20] ____________________________________
+
+case = 20
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 20
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 20 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 20; this is a separate exception message.
+____________________________________ test_distinct[distinct-21] ____________________________________
+
+case = 21
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 21
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 21 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 21; this is a separate exception message.
+____________________________________ test_distinct[distinct-22] ____________________________________
+
+case = 22
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 22
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 22 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 22; this is a separate exception message.
+____________________________________ test_distinct[distinct-23] ____________________________________
+
+case = 23
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 23
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 23 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 23; this is a separate exception message.
+____________________________________ test_distinct[distinct-24] ____________________________________
+
+case = 24
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 24
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 24 has a distinct missing balance
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Inspecting account 24; this is a separate exception message.
+===================================== short test summary info ======================================
+FAILED test_regression.py::test_distinct[distinct-00] - ValueError: account 00 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-01] - ValueError: account 01 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-02] - ValueError: account 02 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-03] - ValueError: account 03 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-04] - ValueError: account 04 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-05] - ValueError: account 05 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-06] - ValueError: account 06 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-07] - ValueError: account 07 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-08] - ValueError: account 08 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-09] - ValueError: account 09 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-10] - ValueError: account 10 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-11] - ValueError: account 11 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-12] - ValueError: account 12 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-13] - ValueError: account 13 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-14] - ValueError: account 14 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-15] - ValueError: account 15 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-16] - ValueError: account 16 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-17] - ValueError: account 17 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-18] - ValueError: account 18 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-19] - ValueError: account 19 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-20] - ValueError: account 20 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-21] - ValueError: account 21 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-22] - ValueError: account 22 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-23] - ValueError: account 23 has a distinct mis...
+FAILED test_regression.py::test_distinct[distinct-24] - ValueError: account 24 has a distinct mis...
+================================== 25 failed, 202 passed in 0.11s ==================================

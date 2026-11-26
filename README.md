@@ -2,7 +2,7 @@
 
 **Spend frontier-model context on decisions and relevant evidence.** LeanContext
 is a local command tool and read-only MCP server for Codex and Claude Code. It
-captures verbose output once, returns a bounded diagnostic view, keeps the
+captures verbose output once, returns an adaptive diagnostic view, keeps the
 original bytes available for retrieval, and supplies exact source ranges.
 
 It also includes project installers, an optional Claude Bash-result hook, a
@@ -14,6 +14,12 @@ database, service, or third-party Python dependency**.
 command runner is intended for noninteractive foreground commands; Windows
 process-tree and Git pipe behavior have not been qualified. WSL/Linux is the
 recommended environment for this release.
+
+**New in 0.2.0:** semantic diagnostic compression preserves every identified
+pytest failure, groups matching exception/traceback signatures, and returns a
+whole captured representative per group. Batch recall retrieves several failure
+details at once. If mandatory evidence exceeds the character target, the report
+says so and keeps it. See [semantic diagnostics](docs/SEMANTIC_DIAGNOSTICS.md).
 
 ## Quick start
 
@@ -52,9 +58,10 @@ installation does not require fetching packages. Replace `python3
 
 | Capability | What stays outside frontier context | What the agent receives |
 | --- | --- | --- |
-| Command capture | Full stdout/stderr, repetitive progress and passing-test output | Exit code, selected diagnostics, omissions, artifact references |
+| Command capture | Full stdout/stderr, repetitive progress and passing-test output | Exit code, complete recognized failure index, representative traces, explicit uncertainty |
+| Diagnostic grouping | Repeated matching traces and captured logs | All failure identifiers, one whole representative per signature, batch detail recall |
 | Exact source retrieval | Unrelated files and unrelated functions | Literal search matches, actual source lines, symbol locations |
-| Batch checks | Intermediate orchestration and separate round trips | One bounded result per independent check |
+| Batch checks | Intermediate orchestration and separate round trips | One adaptive result per independent check |
 | Optional worker | Bounded discovery/explanation on a configured cheaper model | A short untrusted draft with checked literal evidence quotes |
 | Usage audit | Unsupported guesses about quota or dollar savings | Observed provider counters from explicitly supplied logs |
 
@@ -81,8 +88,15 @@ python3 /absolute/path/leancontext.pyz run --root /path/to/project -- bash -lc '
 The command runs exactly once. The wrapper preserves its exit code; timeout is
 124 and output-cap termination is 125. A signal exit uses the customary 128+
 signal value. Timeout and output-cap results explicitly say **INCOMPLETE**.
-Default limits are 120 seconds, 64 MiB captured output and 6,000 returned
-characters. `--timeout`, `--max-output-mb`, and `--max-chars` adjust them.
+Defaults are 120 seconds, 64 MiB captured output and a 6,000-character return
+target. `--timeout`, `--max-output-mb`, and `--max-chars` adjust them.
+
+For semantic failure/compiler reports, **the character target is soft**: the
+complete recognized index and whole representative traces take priority. A
+visible notice and JSON `budget_exceeded` flag report an overrun. Source, ordinary
+line recall, generic excerpts, and optional worker output retain hard budgets.
+`--strategy generic` explicitly requests the old bounded excerpt with omission
+notices; use `--strategy pytest`, `compiler`, or `source` to override detection.
 
 The budget is characters, **not an estimated token count**. Tokens are measured
 separately with a named tokenizer in the benchmark and with actual counters in
@@ -96,9 +110,10 @@ command-specific approvals.
 
 **Keep short commands direct.** A wrapper adds status and reference text and can
 increase tokens for a command that already emits a few lines. The setup
-instructions deliberately reserve it for expected verbose work. A compact view
-is lossy selection; the archive is the recovery path. Omitted diagnostic counts
-must be investigated before making an exhaustive claim.
+instructions deliberately reserve it for expected verbose work. Generic excerpts
+remain lossy selections. Semantic reports preserve identified diagnostic records
+but cannot restore identifiers or frames that the underlying tool never printed.
+Read inventory-completeness notices before making an exhaustive claim.
 
 ### Recover the original without rerunning
 
@@ -112,6 +127,37 @@ For a long single line, bounded recall returns a continuation `--start` and
 `--offset`. `--raw` deliberately removes the output budget and is intended for
 file redirection or local processing. Sending it wholesale back to the model
 undoes the savings. References are scoped to the project root used at capture.
+
+### Diagnose failures and recall several details together
+
+Recognized pytest output automatically gets F1, F2, … failure IDs and G1, G2, …
+signature groups. Compiler errors use D1, D2, …. Grouping requires matching
+evidence; equal exception classes alone are not enough. These groups suggest
+where to investigate, without proving a shared underlying cause.
+
+```bash
+python3 /absolute/path/leancontext.pyz run --root /path/to/project -- python3 -m pytest -v
+python3 /absolute/path/leancontext.pyz recall-many DIAGNOSTIC_REF F1 F8 F25 --root /path/to/project
+python3 /absolute/path/leancontext.pyz diagnostics OLD_RAW_REF --root /path/to/project
+```
+
+Use the diagnostic reference printed beside `recall-many`. It names an immutable
+snapshot, so a later command producing identical raw output cannot change its
+IDs or completeness notices. The separate raw reference remains available for
+exact line/byte recovery. `diagnostics` can also upgrade existing v0.1 raw archives
+without rerunning the failed command.
+
+MCP uses the existing `context` tool:
+
+```json
+{"op":"recall_many","ref":"DIAGNOSTIC_REF","selectors":["F1","F8","F25"]}
+```
+
+F/D selectors return whole per-record details, including captured logs. A G
+selector returns that group's representative; an exact node ID returns every
+phase of that test. Repeated selectors are deduplicated and unknown selectors
+are reported alongside successful matches. Whole selected details can exceed
+the character target.
 
 ### Batch independent checks
 
@@ -254,6 +300,7 @@ actual usage and wall time. Include worker usage, failures and recovery calls.
 python3 -m unittest discover -v
 python3 -m pip install -r benchmarks/requirements.txt
 python3 benchmarks/run.py --output benchmarks/results-rerun.json
+python3 benchmarks/semantic.py
 ```
 
 [Recorded results](benchmarks/results.json) contain real `o200k_base` BPE counts,
@@ -268,6 +315,14 @@ The benchmark intentionally demonstrates where the wrapper is a bad fit. No
 percentage in that file establishes an autonomous task's total savings. The
 default 6,000-character budget is an adjustable engineering choice, not a
 universal optimum.
+
+The [semantic benchmark](benchmarks/semantic-results.json) measures failure-ID
+retention and independently extracted whole traceback retention alongside token
+counts. It executes 25-failure/202-pass pytest fixtures with both repeated and
+distinct errors, plus a successful run. Its raw transcripts, returned text, and
+batch recall are in `benchmarks/semantic-evidence/`. These are controlled generated
+workloads, not the user's original failing suite or an autonomous task A/B.
+See [release results](docs/RESULTS.md) for measurements and scope.
 
 ## Storage, cleanup and removal
 

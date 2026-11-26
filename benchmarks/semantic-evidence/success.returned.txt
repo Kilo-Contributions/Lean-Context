@@ -1,0 +1,3 @@
+[LeanContext test-success; progress and captured logs omitted]
+202 passed in 0.09s
+Artifact 90c5f9f630916e09ceb41afd. Recall logs: recall 90c5f9f630916e09ceb41afd --start 1 --lines 80 (same project --root).

@@ -1,19 +1,31 @@
 {
-  "tests": 93,
+  "version": "0.2.0",
+  "tests": 156,
   "unit_test_command": "python -m unittest discover -q",
   "test_status": "passed",
+  "pytest_fixture_tests": 4,
+  "pytest": "9.2.0",
+  "stdlib_only_test_run": {
+    "tests": 156,
+    "skipped_optional_pytest_fixtures": 4,
+    "status": "passed"
+  },
   "checks": {
-    "archive_file_checksums": 44,
-    "isolated_zipapp": "LeanContext 0.1.0",
-    "project_setup_idempotent": true,
+    "archive_file_checksums": 69,
+    "isolated_zipapp": "LeanContext 0.2.0",
+    "packaged_runner_all_25_ids_3_traces_exit_and_raw_bytes": true,
+    "packaged_cli_batch_recall": true,
     "official_mcp_sdk": {
       "protocol": "2025-11-25",
       "tool_count": 1,
-      "read_and_root_boundary": true
+      "all_25_ids_and_3_full_traces_at_512_target": true,
+      "batch_recall_2_complete_details_at_512_target": true
     },
-    "zipapp_exit_and_binary_recovery": true,
-    "offline_wheel_install": "LeanContext 0.1.0",
-    "wheel_zipapp_source_identical": true
+    "project_setup_idempotent_with_spaces": true,
+    "offline_wheel_install": "LeanContext 0.2.0",
+    "offline_wheel_snapshot_recall": true,
+    "wheel_zipapp_source_identical": true,
+    "cpal_license_preserved": true
   },
   "models_called": 0,
   "live_agent_sessions_tested": false,

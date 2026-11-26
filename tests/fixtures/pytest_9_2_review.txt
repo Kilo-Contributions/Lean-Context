@@ -1,0 +1,42 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+__________________________________ test_group __________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/leancontext-pytest-fixture/test_review_cases.py", line 4, in test_group
+  |     raise ExceptionGroup('outer', [ValueError('inner1'), TypeError('inner2')])
+  | ExceptionGroup: outer (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | ValueError: inner1
+    +---------------- 2 ----------------
+    | TypeError: inner2
+    +------------------------------------
+_________________________________ test_failure _________________________________
+first
+SECOND
+THIRD
+____________________________ test_bad[left] - key] _____________________________
+
+value = 1
+
+    @pytest.mark.parametrize('value', [1, 2], ids=['left] - key', 'other'])
+    def test_bad(value):
+>       assert value == 0
+E       assert 1 == 0
+
+test_review_cases.py:11: AssertionError
+_______________________________ test_bad[other] ________________________________
+
+value = 2
+
+    @pytest.mark.parametrize('value', [1, 2], ids=['left] - key', 'other'])
+    def test_bad(value):
+>       assert value == 0
+E       assert 2 == 0
+
+test_review_cases.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED test_review_cases.py::test_group - ExceptionGroup: outer (2 sub-except...
+FAILED test_review_cases.py::test_failure - Failed: first
+FAILED test_review_cases.py::test_bad[left] - key] - assert 1 == 0
+FAILED test_review_cases.py::test_bad[other] - assert 2 == 0
+4 failed in 0.02s

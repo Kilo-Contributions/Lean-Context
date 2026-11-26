@@ -1,5 +1,30 @@
 # LeanContext progress
 
+## 0.2.0 semantic diagnostics
+
+Implemented the user's five requested changes: failure indexing, conservative
+signature grouping, whole representatives, targeted batch recall, and adaptive
+pytest/success/compiler/source strategies. Diagnostic targets are explicitly
+soft; source, generic, worker, and ordinary line recall budgets remain hard.
+
+Added immutable diagnostic snapshots after reproducing a metadata-collision
+regression with two commands producing identical bytes. Independently reviewed
+and fixed nested-success compiler fallback, git global-option source intent,
+ExceptionGroup/multiline body retention, parameter delimiter ambiguity, and
+deeply nested snapshot handling. Batch recall is included in local accounting.
+
+Verification is recorded in docs/VERIFICATION.json. The controlled real-pytest
+benchmark and complete evidence are in benchmarks/semantic-results.json and
+benchmarks/semantic-evidence/. Complete IDs and complete raw representative
+bodies are independently checked. No real user-suite reproduction, live coding
+agent A/B, quota savings, or end-to-end speed claim is made.
+
+The branch is based on the user's public CPAL-1.0 repository; license and author
+attribution are preserved. No merge or public release publication is part of
+this change.
+
+## 0.1.0 history
+
 Design and plan written on 2026-11-25. User authorized implementation and delivery; routine design and implementation choices are builder decisions.
 
 Research: current Codex/Claude hooks and prior art checked against primary sources. Chosen default is native-shell capture + read-only MCP retrieval. Claude successful Bash filtering is optional. No Codex permission-rewriting hooks.

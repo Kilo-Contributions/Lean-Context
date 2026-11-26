@@ -113,7 +113,7 @@ class Store:
             for k in ('original_chars', 'emitted_chars', 'original_bytes', 'emitted_bytes'):
                 if isinstance(e.get(k), int) and not isinstance(e[k], bool):
                     counts[k] += max(0, e[k])
-            counts['recovery_calls'] += e.get('operation') == 'recall'
+            counts['recovery_calls'] += e.get('operation') in ('recall', 'recall_many')
         counts['artifacts'] = sum(1 for _ in (self.base / 'artifacts').glob('*.gz'))
         counts['state_dir'] = str(self.base)
         counts['warnings'] = warnings

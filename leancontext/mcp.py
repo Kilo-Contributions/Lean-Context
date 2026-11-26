@@ -5,21 +5,24 @@ import json
 import sys
 
 from . import __version__
-from .recall import recall
+from .recall import recall, recall_many
 from .store import Store
 
 PROTOCOLS = ('2024-11-05', '2025-03-26', '2025-06-18', '2025-11-25')
 TOOL = {
     'name': 'context',
-    'description': 'Read-only local context: find files, literal search, exact source ranges, outlines, archived output. Use narrow queries; read exact source before edits.',
+    'description': 'Read-only local context: files, literal search, exact source, outlines, archived output. diagnostics indexes failures; recall_many gets whole details by F/D IDs, G representatives, or exact test identifiers. Diagnostic max_chars is a soft target. Read exact source before edits.',
     'annotations': {'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False},
     'inputSchema': {'type': 'object', 'required': ['op'], 'additionalProperties': False,
         'properties': {
-            'op': {'type': 'string', 'enum': ['files', 'search', 'read', 'outline', 'recall', 'stats']},
+            'op': {'type': 'string', 'enum': ['files', 'search', 'read', 'outline', 'recall', 'diagnostics', 'recall_many', 'stats']},
             'path': {'type': 'string'}, 'query': {'type': 'string'}, 'glob': {'type': 'string'},
             'ref': {'type': 'string'}, 'start': {'type': 'integer', 'minimum': 1},
             'end': {'type': 'integer', 'minimum': 1}, 'limit': {'type': 'integer', 'minimum': 1, 'maximum': 1000},
             'offset': {'type': 'integer', 'minimum': 0},
+            'selectors': {'type': 'array', 'minItems': 1, 'maxItems': 100,
+                          'items': {'type': 'string', 'minLength': 1, 'maxLength': 2000}},
+            'strategy': {'type': 'string', 'enum': ['auto', 'pytest', 'compiler', 'source', 'generic']},
             'max_chars': {'type': 'integer', 'minimum': 512, 'maximum': 12000}
         }}
 }
@@ -31,6 +34,10 @@ def render_result(result: dict, max_chars: int = 6000) -> str:
     # Repository text already includes source/method/scope/continuation labels.
     # Do not duplicate structured metadata or append past the final budget.
     text = result['text'] if 'text' in result else json.dumps(result, ensure_ascii=False, separators=(',', ':'))
+    if result.get('budget_policy') == 'semantic-minimum':
+        # A second truncation here would recreate the missing-failure bug. Only
+        # locally constructed diagnostic results carry this marker.
+        return text
     if len(text) <= max_chars:
         return text
     notice = ('\n[Partial: final response budget reached. Narrow the query/range '
@@ -54,7 +61,7 @@ def context_action(store: Store, args: dict) -> dict:
     op = args.get('op')
     if op not in TOOL['inputSchema']['properties']['op']['enum']:
         raise ValueError('Unsupported read-only operation')
-    for field in ('path', 'query', 'glob', 'ref'):
+    for field in ('path', 'query', 'glob', 'ref', 'strategy'):
         if field in args and (not isinstance(args[field], str) or len(args[field]) > 2000):
             raise ValueError(f'{field} must be a bounded string')
     for field in ('start', 'end', 'limit', 'offset', 'max_chars'):
@@ -69,6 +76,13 @@ def context_action(store: Store, args: dict) -> dict:
         return recall(store, args.get('ref', ''), start=args.get('start', 1),
                       limit=args.get('limit', 80), query=args.get('query'),
                       max_chars=max_chars, offset=args.get('offset', 0))
+    if op == 'diagnostics':
+        from .diagnostics import diagnose
+        return diagnose(store, args.get('ref', ''), max_chars=max_chars,
+                        strategy=args.get('strategy', 'auto'))
+    if op == 'recall_many':
+        return recall_many(store, args.get('ref', ''), selectors=args.get('selectors'),
+                           max_chars=max_chars, strategy=args.get('strategy', 'auto'))
     from .repository import Repository
     repo = Repository(store.root)
     if op == 'files':
@@ -110,7 +124,7 @@ def dispatch(message, store: Store):
             arguments=params.get('arguments', {})
             value = context_action(store, arguments)
             returned=render_result(value,arguments.get('max_chars',6000))
-            if arguments.get('op') not in ('recall','stats'):
+            if arguments.get('op') not in ('recall','recall_many','diagnostics','stats'):
                 store.record({'operation':'context_'+arguments['op'], 'emitted_chars':len(returned),
                               'emitted_bytes':len(returned.encode('utf-8'))})
             result = {'content': [{'type': 'text', 'text': returned}]}

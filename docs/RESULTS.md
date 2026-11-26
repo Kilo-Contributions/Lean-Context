@@ -1,4 +1,78 @@
-# Release results — LeanContext 0.1.0
+# Release results — LeanContext 0.2.0
+
+## Semantic evidence benchmark
+
+The benchmark executes generated tests under real pytest 9.2.0 on Linux with
+Python 3.12.14. Counts use tiktoken 0.14.0 and the named `o200k_base` encoding.
+The original user transcript was unavailable; these fixtures reproduce its
+25-failure/202-pass counts, not its code or underlying bugs.
+
+| Executed workload | Original tokens | Report tokens | Report + batch recall | Reduction including recall | Evidence retained |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 25 failures in 3 signature groups; 202 passes | 12,241 | 1,398 | 2,320 | 81.05% | 25/25 identifiers, 3/3 whole representative traces; one batch retrieves 3 full details |
+| 25 distinct failures; 202 passes; 1,200-character target | 10,683 | 5,487 | 5,487 | 48.64% | 25/25 identifiers, 25/25 whole traces |
+| 202 successful tests | 4,163 | 69 | 69 | 98.34% | Final completion summary; raw logs remain recoverable |
+
+The grouped report alone is **88.58% smaller** and occupies 4,773 characters.
+The distinct case occupies **17,972 characters** and explicitly sets
+`budget_exceeded=true`: all 25 traces remain visible even though they cannot fit
+the 1,200-character target. This is an intentional retention result, not a failed
+attempt to enforce a hard cap. No blanket token-reduction percentage is promised.
+
+Expected identifiers come from the fixture definition. Whole traceback bodies
+are independently extracted from the controlled raw transcript, then checked
+verbatim in the returned report. This prevents a shortened parser selection from
+passing merely because the parser calls its own selection a complete traceback.
+
+Each fixture executes once. Baseline is captured stdout plus stderr; treatment
+includes the semantic report's index, representatives, notices and references.
+The grouped total includes one batch recall of F1, F11 and F19, including their
+captured logs. The command-runner status/raw-stream footer and JSON/MCP envelopes
+are excluded from this microbenchmark. The MCP tool schema is **279 tokens**,
+reported separately. Tiny commands and all-distinct workloads can expand once
+wrapper/index overhead is counted; keep already-short commands direct.
+
+Local transformation timings are in the JSON report. They include local parsing
+and storage, not agent reasoning, provider inference, or end-to-end task latency.
+No frontier/local model, live authenticated coding agent, task-equivalence A/B,
+invoice, or subscription-quota measurement was performed.
+
+Reproduce:
+
+```bash
+python3 -m pip install -r benchmarks/requirements.txt
+python3 -m unittest discover -q
+python3 benchmarks/semantic.py
+```
+
+Evidence: [semantic-results.json](../benchmarks/semantic-results.json) and the
+raw stdout/stderr, returned reports, and batch recall files in
+`benchmarks/semantic-evidence/`. Results vary slightly between runs because timing,
+temporary paths, and content-addressed references vary. Every recorded file has
+a SHA-256 digest in the machine-readable report.
+
+## Release verification
+
+The complete suite passes **156 tests**, including the four executed pytest
+fixtures. A standard-library-only run passes the other 152 and explicitly skips
+those four optional fixture tests. Code compilation and source/document whitespace
+checks pass; raw pytest transcript whitespace is preserved verbatim. See
+[VERIFICATION.json](VERIFICATION.json) for distribution checks.
+
+Independent review found and fixed missing ExceptionGroup/multiline diagnostics,
+parameter-ID delimiter ambiguity, mutable artifact metadata affecting recall,
+nested-success compiler fallback, Git global-option source detection, and deep
+snapshot JSON that could terminate the MCP server. Tests cover each regression.
+
+The completeness guarantee applies to LeanContext's generated report and stored
+artifacts. A host can still impose a smaller output limit; targeted recall is
+the recovery path. Custom reporter formats or already-truncated producer output
+can yield explicitly unknown/incomplete inventories.
+
+## Historical 0.1.0 measurements
+
+The following results and checks describe the previous release. They are kept
+for comparison and are not the 0.2.0 test count or semantic retention guarantee.
 
 ## What was measured
 

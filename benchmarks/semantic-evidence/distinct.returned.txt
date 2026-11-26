@@ -1,0 +1,533 @@
+NOTICE: required diagnostic evidence exceeds the 1200-character target; the inventory and requested traces have not been clipped.
+[LeanContext pytest-failures; 25 indexed diagnostics; 25 signature groups; inventory matches captured summary count]
+25 failed, 202 passed in 0.11s
+
+Failure/error index (all identified records):
+F1 [G1] FAILED test_regression.py::test_distinct[distinct-00]
+F2 [G2] FAILED test_regression.py::test_distinct[distinct-01]
+F3 [G3] FAILED test_regression.py::test_distinct[distinct-02]
+F4 [G4] FAILED test_regression.py::test_distinct[distinct-03]
+F5 [G5] FAILED test_regression.py::test_distinct[distinct-04]
+F6 [G6] FAILED test_regression.py::test_distinct[distinct-05]
+F7 [G7] FAILED test_regression.py::test_distinct[distinct-06]
+F8 [G8] FAILED test_regression.py::test_distinct[distinct-07]
+F9 [G9] FAILED test_regression.py::test_distinct[distinct-08]
+F10 [G10] FAILED test_regression.py::test_distinct[distinct-09]
+F11 [G11] FAILED test_regression.py::test_distinct[distinct-10]
+F12 [G12] FAILED test_regression.py::test_distinct[distinct-11]
+F13 [G13] FAILED test_regression.py::test_distinct[distinct-12]
+F14 [G14] FAILED test_regression.py::test_distinct[distinct-13]
+F15 [G15] FAILED test_regression.py::test_distinct[distinct-14]
+F16 [G16] FAILED test_regression.py::test_distinct[distinct-15]
+F17 [G17] FAILED test_regression.py::test_distinct[distinct-16]
+F18 [G18] FAILED test_regression.py::test_distinct[distinct-17]
+F19 [G19] FAILED test_regression.py::test_distinct[distinct-18]
+F20 [G20] FAILED test_regression.py::test_distinct[distinct-19]
+F21 [G21] FAILED test_regression.py::test_distinct[distinct-20]
+F22 [G22] FAILED test_regression.py::test_distinct[distinct-21]
+F23 [G23] FAILED test_regression.py::test_distinct[distinct-22]
+F24 [G24] FAILED test_regression.py::test_distinct[distinct-23]
+F25 [G25] FAILED test_regression.py::test_distinct[distinct-24]
+
+G1: 1 record(s); representative F1
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 0
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 00 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G2: 1 record(s); representative F2
+
+case = 1
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 1
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 01 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G3: 1 record(s); representative F3
+
+case = 2
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 2
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 02 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G4: 1 record(s); representative F4
+
+case = 3
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 3
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 03 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G5: 1 record(s); representative F5
+
+case = 4
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 4
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 04 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G6: 1 record(s); representative F6
+
+case = 5
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 5
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 05 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G7: 1 record(s); representative F7
+
+case = 6
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 6
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 06 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G8: 1 record(s); representative F8
+
+case = 7
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 7
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 07 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G9: 1 record(s); representative F9
+
+case = 8
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 8
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 08 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G10: 1 record(s); representative F10
+
+case = 9
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 9
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 09 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G11: 1 record(s); representative F11
+
+case = 10
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 10
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 10 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G12: 1 record(s); representative F12
+
+case = 11
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 11
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 11 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G13: 1 record(s); representative F13
+
+case = 12
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 12
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 12 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G14: 1 record(s); representative F14
+
+case = 13
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 13
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 13 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G15: 1 record(s); representative F15
+
+case = 14
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 14
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 14 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G16: 1 record(s); representative F16
+
+case = 15
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 15
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 15 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G17: 1 record(s); representative F17
+
+case = 16
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 16
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 16 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G18: 1 record(s); representative F18
+
+case = 17
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 17
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 17 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G19: 1 record(s); representative F19
+
+case = 18
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 18
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 18 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G20: 1 record(s); representative F20
+
+case = 19
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 19
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 19 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G21: 1 record(s); representative F21
+
+case = 20
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 20
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 20 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G22: 1 record(s); representative F22
+
+case = 21
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 21
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 21 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G23: 1 record(s); representative F23
+
+case = 22
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 22
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 22 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G24: 1 record(s); representative F24
+
+case = 23
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 23
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 23 has a distinct missing balance
+
+test_regression.py:8: ValueError
+
+G25: 1 record(s); representative F25
+
+case = 24
+
+    @pytest.mark.parametrize("case", range(25), ids=lambda case: f"distinct-{case:02d}")
+    def test_distinct(case):
+        print(f"Inspecting account {case:02d}; this is a separate exception message.")
+>       _lookup_distinct(case)
+
+test_regression.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+case = 24
+
+    def _lookup_distinct(case):
+>       raise ValueError(f"account {case:02d} has a distinct missing balance")
+E       ValueError: account 24 has a distinct missing balance
+
+test_regression.py:8: ValueError
+Repeated traces, progress and captured logs omitted; full per-record details remain available.
+Artifact 7fc6a302a200cd16d5e99658. Recall details in one call: recall-many 7fc6a302a200cd16d5e99658 F1 F2 (or group IDs/exact identifiers; same project --root).
+Raw output: e258a067600999467c110bab; use line recall for omitted logs.

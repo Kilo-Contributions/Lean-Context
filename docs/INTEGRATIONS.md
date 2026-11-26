@@ -1,6 +1,6 @@
 # Codex and Claude Code integration
 
-LeanContext keeps large outputs locally and gives an agent bounded, recoverable
+LeanContext keeps large outputs locally and gives an agent adaptive, recoverable
 evidence. Installation adds a read-only MCP server and a short project instruction
 block. A Claude Code Bash output hook is optional. Nothing changes the selected
 model, reasoning level, permission rules, or global host configuration.
@@ -84,7 +84,7 @@ python3 /absolute/path/leancontext.pyz run --root /absolute/path/project --timeo
 ```
 
 The native wrapper runs the command once, stores its captured streams, returns a
-bounded view when useful, and preserves its exit status. Keep small commands
+compact view when useful, and preserves its exit status. Keep small commands
 direct to avoid startup overhead. Do not rerun a command merely to obtain output
 that was omitted from the view; use the saved artifact:
 
@@ -92,6 +92,22 @@ that was omitted from the view; use the saved artifact:
 python3 /absolute/path/leancontext.pyz recall ARTIFACT_REF --root /absolute/path/project --start 1 --lines 80
 python3 /absolute/path/leancontext.pyz recall ARTIFACT_REF --root /absolute/path/project --query ERROR
 ```
+
+Version 0.2.0 adds semantic diagnostic reports and batch recall. The report
+preserves all identified failures and whole representatives, even when that
+exceeds the character target. It prints a diagnostic snapshot reference for
+`recall-many`, separate from raw byte/line references:
+
+```bash
+python3 /absolute/path/leancontext.pyz recall-many DIAGNOSTIC_REF F1 F8 F25 --root /absolute/path/project
+python3 /absolute/path/leancontext.pyz diagnostics OLD_RAW_REF --root /absolute/path/project
+```
+
+The same read-only MCP tool accepts `op="diagnostics"` and
+`op="recall_many"`, with `ref` and `selectors`. Source/ordinary line recall
+budgets remain hard. See [semantic diagnostics](SEMANTIC_DIAGNOSTICS.md) for
+grouping, completeness, and strategy rules. Rerun setup using the new launcher
+to refresh managed project instructions when upgrading.
 
 Repository access remains source-exact. Start with a narrow query or range and
 expand only as needed:

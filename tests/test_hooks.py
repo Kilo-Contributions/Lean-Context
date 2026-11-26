@@ -136,6 +136,17 @@ class ClaudeHookTests(unittest.TestCase):
         self.assertEqual(self.handle(payload, state_dir=self.state), {})
         self.assertFalse(self.state.exists())
 
+    def test_semantic_diagnostics_are_not_dropped_to_fit_hook_target(self):
+        from tests.test_semantic import pytest_output
+        payload = self.payload()
+        payload['tool_response']['stdout'] = pytest_output()
+        result = self.handle(payload, max_chars=1200, state_dir=self.state)
+        text = result['hookSpecificOutput']['updatedToolOutput']['stdout']
+        for i in range(25):
+            self.assertIn(f'tests/test_bad.py::test_bad[{i}]', text)
+        self.assertIn('target', text)
+        self.assertLess(len(text), len(payload['tool_response']['stdout']))
+
 
 if __name__ == "__main__":
     unittest.main()

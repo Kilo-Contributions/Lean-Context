@@ -47,7 +47,7 @@ class CLITests(unittest.TestCase):
         self.assertIn('serve',r.stdout)
         r=self.run_cli('--version')
         self.assertEqual(r.returncode,0)
-        self.assertIn('0.1.0',r.stdout)
+        self.assertIn('0.2.0',r.stdout)
 
 
 if __name__ == '__main__':

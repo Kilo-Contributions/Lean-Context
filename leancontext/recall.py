@@ -4,6 +4,53 @@ from __future__ import annotations
 from .store import Store
 
 
+def recall_many(store: Store, ref: str, *, selectors: list[str], max_chars: int = 6000,
+                strategy: str = 'auto') -> dict:
+    """Recall whole diagnostic details in one call, never rerun their command.
+
+    F/D IDs select records; G IDs select a group's representative. An exact
+    test identifier selects all phases of that test. Duplicates are returned
+    once, in requested order. Unknown selectors are reported alongside hits.
+    """
+    from .diagnostics import group_diagnostics, load_report, semantic_result, validate_target
+    validate_target(max_chars)
+    if (not isinstance(selectors, list) or not 1 <= len(selectors) <= 100 or
+            any(not isinstance(s, str) or not 1 <= len(s) <= 2000 for s in selectors)):
+        raise ValueError('selectors must be a list of 1–100 IDs or exact identifiers (1–2000 characters each)')
+    report = load_report(store, ref, strategy=strategy)
+    groups = dict(group_diagnostics(report.diagnostics))
+    by_id = {item.id: item for item in report.diagnostics}
+    selected = {}
+    missing = []
+    for selector in selectors:
+        if selector in by_id:
+            found = [by_id[selector]]
+        elif selector in groups:
+            found = [groups[selector][0]]
+        else:
+            found = [item for item in report.diagnostics if item.label == selector]
+        if not found and selector not in missing:
+            missing.append(selector)
+        for item in found:
+            selected.setdefault(item.id, item)
+    parts = [f'[LeanContext diagnostic recall; artifact {ref}; {len(selected)} complete record(s)]\n']
+    for item in selected.values():
+        parts.append(f'\n{item.id} {item.status} {item.label} ({item.phase})\n')
+        parts.append(item.detail or item.traceback or item.message or 'No detail was captured for this record.')
+        if not parts[-1].endswith('\n'):
+            parts.append('\n')
+    if missing:
+        parts.append('\nUnmatched selectors: ' + ', '.join(missing) + '\n')
+    for notice in report.notices:
+        parts.append(f'NOTICE: {notice}\n')
+    result = semantic_result(''.join(parts), max_chars=max_chars, ref=ref, strategy=report.strategy,
+                             selected_ids=list(selected), missing=missing,
+                             inventory_complete=report.inventory_complete)
+    store.record({'operation': 'recall_many', 'ref': ref, 'emitted_chars': len(result['text']),
+                  'emitted_bytes': len(result['text'].encode('utf-8'))})
+    return result
+
+
 def recall(store: Store, ref: str, *, start: int = 1, limit: int = 80,
            query: str | None = None, max_chars: int = 6000, offset: int = 0) -> dict:
     for name, value, low, high in (('start', start, 1, 10**9), ('limit', limit, 1, 1000),

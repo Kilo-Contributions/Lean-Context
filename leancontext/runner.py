@@ -29,6 +29,12 @@ class RunResult:
     stderr_bytes: int
     original_chars: int
     emitted_chars: int
+    strategy: str = 'generic'
+    diagnostic_ref: str | None = None
+    diagnostic_count: int = 0
+    group_count: int = 0
+    inventory_complete: bool | None = None
+    budget_exceeded: bool = False
 
 
 def _kill_group(process: subprocess.Popen) -> None:
@@ -43,7 +49,10 @@ def _kill_group(process: subprocess.Popen) -> None:
 
 def run_command(argv: list[str], *, store: Store, cwd: str | Path | None = None,
                 timeout: float = 120, max_chars: int = 6000,
-                max_output_bytes: int = 64 * 1024 * 1024) -> RunResult:
+                max_output_bytes: int = 64 * 1024 * 1024, strategy: str = 'auto') -> RunResult:
+    from .diagnostics import STRATEGIES
+    if strategy not in STRATEGIES:
+        raise ValueError('strategy must be one of: ' + ', '.join(STRATEGIES))
     if not argv or any(not isinstance(a, str) or '\x00' in a for a in argv):
         raise ValueError('argv must contain non-NUL strings')
     if not 0 < timeout <= 86400:
@@ -136,12 +145,13 @@ def run_command(argv: list[str], *, store: Store, cwd: str | Path | None = None,
     out_text = stdout.decode('utf-8', errors='backslashreplace')
     err_text = stderr.decode('utf-8', errors='backslashreplace')
     body = ('STDERR:\n' + err_text if stderr else '') + ('\nSTDOUT:\n' + out_text if stdout else '')
-    raw_ref = store.save(body, 'command-result', {**meta, 'stdout_ref': out_ref, 'stderr_ref': err_ref})
+    result_meta = {**meta, 'stdout_ref': out_ref, 'stderr_ref': err_ref}
+    raw_ref = store.save(body, 'command-result', result_meta)
     state = 'timeout; INCOMPLETE capture' if timed_out else 'output cap; INCOMPLETE capture' if limited.is_set() else 'completed'
     header = f'[LeanContext exit={exit_code}; {state}; {elapsed:.3f}s]\n'
     footer = f'\nRaw stdout={out_ref} stderr={err_ref}\n'
     view = compact(body, store=store, max_chars=max_chars-len(header)-len(footer),
-                   kind='command-result', metadata=meta)
+                   kind='command-result', metadata=result_meta, strategy=strategy)
     result_text = header + view.text + footer
     # This local ledger includes preview/reference overhead and retrieval events.
     store.record({'operation': 'run', 'original_chars': len(body),
@@ -151,17 +161,20 @@ def run_command(argv: list[str], *, store: Store, cwd: str | Path | None = None,
                   'elapsed_seconds': elapsed})
     return RunResult(result_text, exit_code, out_ref, err_ref, raw_ref, elapsed,
                      timed_out, limited.is_set(), len(stdout), len(stderr),
-                     len(body), len(result_text))
+                     len(body), len(result_text), view.strategy, view.diagnostic_ref,
+                     view.diagnostic_count, view.group_count, view.inventory_complete,
+                     len(result_text) > max_chars)
 
 
 def run_batch(commands: list[list[str]], *, store: Store, jobs: int = 1,
               cwd: str | Path | None = None, timeout: float = 120,
-              max_chars: int = 6000, max_output_bytes: int = 64*1024*1024) -> list[RunResult]:
+              max_chars: int = 6000, max_output_bytes: int = 64*1024*1024,
+              strategy: str = 'auto') -> list[RunResult]:
     if not 1 <= jobs <= 8 or not 1 <= len(commands) <= 16:
         raise ValueError('Use 1–8 workers and 1–16 commands; parallel jobs must be independent')
     def one(command):
         return run_command(command, store=store, cwd=cwd, timeout=timeout,
-                           max_chars=max_chars, max_output_bytes=max_output_bytes)
+                           max_chars=max_chars, max_output_bytes=max_output_bytes, strategy=strategy)
     if jobs == 1:
         return [one(c) for c in commands]
     with ThreadPoolExecutor(max_workers=jobs) as pool:

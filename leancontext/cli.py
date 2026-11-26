@@ -23,7 +23,10 @@ def _location(parser):
 def _runner_options(parser):
     _location(parser)
     parser.add_argument('--timeout', type=float, default=120)
-    parser.add_argument('--max-chars', type=int, default=6000, help='Total returned text budget (minimum 1200)')
+    parser.add_argument('--max-chars', type=int, default=6000,
+                        help='Returned text target (minimum 1200); semantic diagnostics keep all IDs/whole representative traces even when larger')
+    parser.add_argument('--strategy', choices=['auto', 'pytest', 'compiler', 'source', 'generic'], default='auto',
+                        help='Adaptive output format; generic restores the hard-bounded excerpt')
     parser.add_argument('--max-output-mb', type=float, default=64, help='Kill on raw capture cap; report incomplete output')
     parser.add_argument('--json', action='store_true', help='Machine-readable result including usage and archive IDs')
 
@@ -48,6 +51,15 @@ def make_parser():
     recall.add_argument('--query', help='Literal text to find inside the artifact')
     recall.add_argument('--max-chars', type=int, default=6000)
     recall.add_argument('--raw', action='store_true', help='Emit exact original bytes with no limit; intended for file redirection')
+    diagnostics = sub.add_parser('diagnostics', help='Index archived diagnostic output without rerunning it')
+    many = sub.add_parser('recall-many', help='Recall whole failure details in one call by F/D IDs, G representatives, or exact test identifiers')
+    for diagnostic_parser in (diagnostics, many):
+        _location(diagnostic_parser)
+        diagnostic_parser.add_argument('ref')
+        diagnostic_parser.add_argument('--max-chars', type=int, default=6000, help='Soft target; complete requested evidence takes priority')
+        diagnostic_parser.add_argument('--strategy', choices=['auto', 'pytest', 'compiler'], default='auto')
+        diagnostic_parser.add_argument('--json', action='store_true')
+    many.add_argument('selectors', nargs='+')
     context = sub.add_parser('context', help='Read-only exact source retrieval')
     _location(context)
     context.add_argument('--json', action='store_true')
@@ -177,7 +189,8 @@ def main(argv=None) -> int:
         if args.action in ('run', 'batch'):
             from .runner import run_batch, run_command
             kw = {'store':store, 'cwd':args.root, 'timeout':args.timeout,
-                  'max_chars':args.max_chars, 'max_output_bytes':int(args.max_output_mb*1024*1024)}
+                  'max_chars':args.max_chars, 'max_output_bytes':int(args.max_output_mb*1024*1024),
+                  'strategy':args.strategy}
             if args.action == 'run':
                 command = args.argv[1:] if args.argv and args.argv[0] == '--' else args.argv
                 result = run_command(command, **kw)
@@ -205,6 +218,16 @@ def main(argv=None) -> int:
                 from .recall import recall
                 print(recall(store,args.ref,start=args.start,limit=args.lines,offset=args.offset,
                              query=args.query,max_chars=args.max_chars)['text'],end='')
+            return 0
+        if args.action in ('diagnostics', 'recall-many'):
+            if args.action == 'diagnostics':
+                from .diagnostics import diagnose
+                result = diagnose(store, args.ref, max_chars=args.max_chars, strategy=args.strategy)
+            else:
+                from .recall import recall_many
+                result = recall_many(store, args.ref, selectors=args.selectors,
+                                     max_chars=args.max_chars, strategy=args.strategy)
+            _json(result) if args.json else print(result['text'], end='')
             return 0
         if args.action == 'context':
             from .mcp import context_action, render_result

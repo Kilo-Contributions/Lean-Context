@@ -1,0 +1,985 @@
+======================================= test session starts ========================================
+platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0 -- /tmp/leancontext-pytest-v02/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/leancontext-semantic-bench-1shl1gm3/grouped
+configfile: pytest.ini
+collecting ... collected 227 items
+
+test_regression.py::test_success[pass-000] PASSED                                            [  0%]
+test_regression.py::test_success[pass-001] PASSED                                            [  0%]
+test_regression.py::test_success[pass-002] PASSED                                            [  1%]
+test_regression.py::test_success[pass-003] PASSED                                            [  1%]
+test_regression.py::test_success[pass-004] PASSED                                            [  2%]
+test_regression.py::test_success[pass-005] PASSED                                            [  2%]
+test_regression.py::test_success[pass-006] PASSED                                            [  3%]
+test_regression.py::test_success[pass-007] PASSED                                            [  3%]
+test_regression.py::test_success[pass-008] PASSED                                            [  3%]
+test_regression.py::test_success[pass-009] PASSED                                            [  4%]
+test_regression.py::test_success[pass-010] PASSED                                            [  4%]
+test_regression.py::test_success[pass-011] PASSED                                            [  5%]
+test_regression.py::test_success[pass-012] PASSED                                            [  5%]
+test_regression.py::test_success[pass-013] PASSED                                            [  6%]
+test_regression.py::test_success[pass-014] PASSED                                            [  6%]
+test_regression.py::test_success[pass-015] PASSED                                            [  7%]
+test_regression.py::test_success[pass-016] PASSED                                            [  7%]
+test_regression.py::test_success[pass-017] PASSED                                            [  7%]
+test_regression.py::test_success[pass-018] PASSED                                            [  8%]
+test_regression.py::test_success[pass-019] PASSED                                            [  8%]
+test_regression.py::test_success[pass-020] PASSED                                            [  9%]
+test_regression.py::test_success[pass-021] PASSED                                            [  9%]
+test_regression.py::test_success[pass-022] PASSED                                            [ 10%]
+test_regression.py::test_success[pass-023] PASSED                                            [ 10%]
+test_regression.py::test_success[pass-024] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-025] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-026] PASSED                                            [ 11%]
+test_regression.py::test_success[pass-027] PASSED                                            [ 12%]
+test_regression.py::test_success[pass-028] PASSED                                            [ 12%]
+test_regression.py::test_success[pass-029] PASSED                                            [ 13%]
+test_regression.py::test_success[pass-030] PASSED                                            [ 13%]
+test_regression.py::test_success[pass-031] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-032] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-033] PASSED                                            [ 14%]
+test_regression.py::test_success[pass-034] PASSED                                            [ 15%]
+test_regression.py::test_success[pass-035] PASSED                                            [ 15%]
+test_regression.py::test_success[pass-036] PASSED                                            [ 16%]
+test_regression.py::test_success[pass-037] PASSED                                            [ 16%]
+test_regression.py::test_success[pass-038] PASSED                                            [ 17%]
+test_regression.py::test_success[pass-039] PASSED                                            [ 17%]
+test_regression.py::test_success[pass-040] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-041] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-042] PASSED                                            [ 18%]
+test_regression.py::test_success[pass-043] PASSED                                            [ 19%]
+test_regression.py::test_success[pass-044] PASSED                                            [ 19%]
+test_regression.py::test_success[pass-045] PASSED                                            [ 20%]
+test_regression.py::test_success[pass-046] PASSED                                            [ 20%]
+test_regression.py::test_success[pass-047] PASSED                                            [ 21%]
+test_regression.py::test_success[pass-048] PASSED                                            [ 21%]
+test_regression.py::test_success[pass-049] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-050] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-051] PASSED                                            [ 22%]
+test_regression.py::test_success[pass-052] PASSED                                            [ 23%]
+test_regression.py::test_success[pass-053] PASSED                                            [ 23%]
+test_regression.py::test_success[pass-054] PASSED                                            [ 24%]
+test_regression.py::test_success[pass-055] PASSED                                            [ 24%]
+test_regression.py::test_success[pass-056] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-057] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-058] PASSED                                            [ 25%]
+test_regression.py::test_success[pass-059] PASSED                                            [ 26%]
+test_regression.py::test_success[pass-060] PASSED                                            [ 26%]
+test_regression.py::test_success[pass-061] PASSED                                            [ 27%]
+test_regression.py::test_success[pass-062] PASSED                                            [ 27%]
+test_regression.py::test_success[pass-063] PASSED                                            [ 28%]
+test_regression.py::test_success[pass-064] PASSED                                            [ 28%]
+test_regression.py::test_success[pass-065] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-066] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-067] PASSED                                            [ 29%]
+test_regression.py::test_success[pass-068] PASSED                                            [ 30%]
+test_regression.py::test_success[pass-069] PASSED                                            [ 30%]
+test_regression.py::test_success[pass-070] PASSED                                            [ 31%]
+test_regression.py::test_success[pass-071] PASSED                                            [ 31%]
+test_regression.py::test_success[pass-072] PASSED                                            [ 32%]
+test_regression.py::test_success[pass-073] PASSED                                            [ 32%]
+test_regression.py::test_success[pass-074] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-075] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-076] PASSED                                            [ 33%]
+test_regression.py::test_success[pass-077] PASSED                                            [ 34%]
+test_regression.py::test_success[pass-078] PASSED                                            [ 34%]
+test_regression.py::test_success[pass-079] PASSED                                            [ 35%]
+test_regression.py::test_success[pass-080] PASSED                                            [ 35%]
+test_regression.py::test_success[pass-081] PASSED                                            [ 36%]
+test_regression.py::test_success[pass-082] PASSED                                            [ 36%]
+test_regression.py::test_success[pass-083] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-084] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-085] PASSED                                            [ 37%]
+test_regression.py::test_success[pass-086] PASSED                                            [ 38%]
+test_regression.py::test_success[pass-087] PASSED                                            [ 38%]
+test_regression.py::test_success[pass-088] PASSED                                            [ 39%]
+test_regression.py::test_success[pass-089] PASSED                                            [ 39%]
+test_regression.py::test_success[pass-090] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-091] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-092] PASSED                                            [ 40%]
+test_regression.py::test_success[pass-093] PASSED                                            [ 41%]
+test_regression.py::test_success[pass-094] PASSED                                            [ 41%]
+test_regression.py::test_success[pass-095] PASSED                                            [ 42%]
+test_regression.py::test_success[pass-096] PASSED                                            [ 42%]
+test_regression.py::test_success[pass-097] PASSED                                            [ 43%]
+test_regression.py::test_success[pass-098] PASSED                                            [ 43%]
+test_regression.py::test_success[pass-099] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-100] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-101] PASSED                                            [ 44%]
+test_regression.py::test_success[pass-102] PASSED                                            [ 45%]
+test_regression.py::test_success[pass-103] PASSED                                            [ 45%]
+test_regression.py::test_success[pass-104] PASSED                                            [ 46%]
+test_regression.py::test_success[pass-105] PASSED                                            [ 46%]
+test_regression.py::test_success[pass-106] PASSED                                            [ 47%]
+test_regression.py::test_success[pass-107] PASSED                                            [ 47%]
+test_regression.py::test_success[pass-108] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-109] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-110] PASSED                                            [ 48%]
+test_regression.py::test_success[pass-111] PASSED                                            [ 49%]
+test_regression.py::test_success[pass-112] PASSED                                            [ 49%]
+test_regression.py::test_success[pass-113] PASSED                                            [ 50%]
+test_regression.py::test_success[pass-114] PASSED                                            [ 50%]
+test_regression.py::test_success[pass-115] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-116] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-117] PASSED                                            [ 51%]
+test_regression.py::test_success[pass-118] PASSED                                            [ 52%]
+test_regression.py::test_success[pass-119] PASSED                                            [ 52%]
+test_regression.py::test_success[pass-120] PASSED                                            [ 53%]
+test_regression.py::test_success[pass-121] PASSED                                            [ 53%]
+test_regression.py::test_success[pass-122] PASSED                                            [ 54%]
+test_regression.py::test_success[pass-123] PASSED                                            [ 54%]
+test_regression.py::test_success[pass-124] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-125] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-126] PASSED                                            [ 55%]
+test_regression.py::test_success[pass-127] PASSED                                            [ 56%]
+test_regression.py::test_success[pass-128] PASSED                                            [ 56%]
+test_regression.py::test_success[pass-129] PASSED                                            [ 57%]
+test_regression.py::test_success[pass-130] PASSED                                            [ 57%]
+test_regression.py::test_success[pass-131] PASSED                                            [ 58%]
+test_regression.py::test_success[pass-132] PASSED                                            [ 58%]
+test_regression.py::test_success[pass-133] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-134] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-135] PASSED                                            [ 59%]
+test_regression.py::test_success[pass-136] PASSED                                            [ 60%]
+test_regression.py::test_success[pass-137] PASSED                                            [ 60%]
+test_regression.py::test_success[pass-138] PASSED                                            [ 61%]
+test_regression.py::test_success[pass-139] PASSED                                            [ 61%]
+test_regression.py::test_success[pass-140] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-141] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-142] PASSED                                            [ 62%]
+test_regression.py::test_success[pass-143] PASSED                                            [ 63%]
+test_regression.py::test_success[pass-144] PASSED                                            [ 63%]
+test_regression.py::test_success[pass-145] PASSED                                            [ 64%]
+test_regression.py::test_success[pass-146] PASSED                                            [ 64%]
+test_regression.py::test_success[pass-147] PASSED                                            [ 65%]
+test_regression.py::test_success[pass-148] PASSED                                            [ 65%]
+test_regression.py::test_success[pass-149] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-150] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-151] PASSED                                            [ 66%]
+test_regression.py::test_success[pass-152] PASSED                                            [ 67%]
+test_regression.py::test_success[pass-153] PASSED                                            [ 67%]
+test_regression.py::test_success[pass-154] PASSED                                            [ 68%]
+test_regression.py::test_success[pass-155] PASSED                                            [ 68%]
+test_regression.py::test_success[pass-156] PASSED                                            [ 69%]
+test_regression.py::test_success[pass-157] PASSED                                            [ 69%]
+test_regression.py::test_success[pass-158] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-159] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-160] PASSED                                            [ 70%]
+test_regression.py::test_success[pass-161] PASSED                                            [ 71%]
+test_regression.py::test_success[pass-162] PASSED                                            [ 71%]
+test_regression.py::test_success[pass-163] PASSED                                            [ 72%]
+test_regression.py::test_success[pass-164] PASSED                                            [ 72%]
+test_regression.py::test_success[pass-165] PASSED                                            [ 73%]
+test_regression.py::test_success[pass-166] PASSED                                            [ 73%]
+test_regression.py::test_success[pass-167] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-168] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-169] PASSED                                            [ 74%]
+test_regression.py::test_success[pass-170] PASSED                                            [ 75%]
+test_regression.py::test_success[pass-171] PASSED                                            [ 75%]
+test_regression.py::test_success[pass-172] PASSED                                            [ 76%]
+test_regression.py::test_success[pass-173] PASSED                                            [ 76%]
+test_regression.py::test_success[pass-174] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-175] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-176] PASSED                                            [ 77%]
+test_regression.py::test_success[pass-177] PASSED                                            [ 78%]
+test_regression.py::test_success[pass-178] PASSED                                            [ 78%]
+test_regression.py::test_success[pass-179] PASSED                                            [ 79%]
+test_regression.py::test_success[pass-180] PASSED                                            [ 79%]
+test_regression.py::test_success[pass-181] PASSED                                            [ 80%]
+test_regression.py::test_success[pass-182] PASSED                                            [ 80%]
+test_regression.py::test_success[pass-183] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-184] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-185] PASSED                                            [ 81%]
+test_regression.py::test_success[pass-186] PASSED                                            [ 82%]
+test_regression.py::test_success[pass-187] PASSED                                            [ 82%]
+test_regression.py::test_success[pass-188] PASSED                                            [ 83%]
+test_regression.py::test_success[pass-189] PASSED                                            [ 83%]
+test_regression.py::test_success[pass-190] PASSED                                            [ 84%]
+test_regression.py::test_success[pass-191] PASSED                                            [ 84%]
+test_regression.py::test_success[pass-192] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-193] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-194] PASSED                                            [ 85%]
+test_regression.py::test_success[pass-195] PASSED                                            [ 86%]
+test_regression.py::test_success[pass-196] PASSED                                            [ 86%]
+test_regression.py::test_success[pass-197] PASSED                                            [ 87%]
+test_regression.py::test_success[pass-198] PASSED                                            [ 87%]
+test_regression.py::test_success[pass-199] PASSED                                            [ 88%]
+test_regression.py::test_success[pass-200] PASSED                                            [ 88%]
+test_regression.py::test_success[pass-201] PASSED                                            [ 88%]
+test_regression.py::test_records[record-00] FAILED                                           [ 89%]
+test_regression.py::test_records[record-01] FAILED                                           [ 89%]
+test_regression.py::test_records[record-02] FAILED                                           [ 90%]
+test_regression.py::test_records[record-03] FAILED                                           [ 90%]
+test_regression.py::test_records[record-04] FAILED                                           [ 91%]
+test_regression.py::test_records[record-05] FAILED                                           [ 91%]
+test_regression.py::test_records[record-06] FAILED                                           [ 92%]
+test_regression.py::test_records[record-07] FAILED                                           [ 92%]
+test_regression.py::test_records[record-08] FAILED                                           [ 92%]
+test_regression.py::test_records[record-09] FAILED                                           [ 93%]
+test_regression.py::test_accounts[account-00] FAILED                                         [ 93%]
+test_regression.py::test_accounts[account-01] FAILED                                         [ 94%]
+test_regression.py::test_accounts[account-02] FAILED                                         [ 94%]
+test_regression.py::test_accounts[account-03] FAILED                                         [ 95%]
+test_regression.py::test_accounts[account-04] FAILED                                         [ 95%]
+test_regression.py::test_accounts[account-05] FAILED                                         [ 96%]
+test_regression.py::test_accounts[account-06] FAILED                                         [ 96%]
+test_regression.py::test_accounts[account-07] FAILED                                         [ 96%]
+test_regression.py::test_transactions[transaction-00] FAILED                                 [ 97%]
+test_regression.py::test_transactions[transaction-01] FAILED                                 [ 97%]
+test_regression.py::test_transactions[transaction-02] FAILED                                 [ 98%]
+test_regression.py::test_transactions[transaction-03] FAILED                                 [ 98%]
+test_regression.py::test_transactions[transaction-04] FAILED                                 [ 99%]
+test_regression.py::test_transactions[transaction-05] FAILED                                 [ 99%]
+test_regression.py::test_transactions[transaction-06] FAILED                                 [100%]
+
+============================================= FAILURES =============================================
+_____________________________________ test_records[record-00] ______________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 0; original payload preserved in the captured log.
+_____________________________________ test_records[record-01] ______________________________________
+
+case = 1
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 1; original payload preserved in the captured log.
+_____________________________________ test_records[record-02] ______________________________________
+
+case = 2
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 2; original payload preserved in the captured log.
+_____________________________________ test_records[record-03] ______________________________________
+
+case = 3
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 3; original payload preserved in the captured log.
+_____________________________________ test_records[record-04] ______________________________________
+
+case = 4
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 4; original payload preserved in the captured log.
+_____________________________________ test_records[record-05] ______________________________________
+
+case = 5
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 5; original payload preserved in the captured log.
+_____________________________________ test_records[record-06] ______________________________________
+
+case = 6
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 6; original payload preserved in the captured log.
+_____________________________________ test_records[record-07] ______________________________________
+
+case = 7
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 7; original payload preserved in the captured log.
+_____________________________________ test_records[record-08] ______________________________________
+
+case = 8
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 8; original payload preserved in the captured log.
+_____________________________________ test_records[record-09] ______________________________________
+
+case = 9
+
+    @pytest.mark.parametrize("case", range(10), ids=lambda case: f"record-{case:02d}")
+    def test_records(case):
+        print(f"Reading record fixture {case}; original payload preserved in the captured log.")
+>       _decode_record({})
+
+test_regression.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _decode_record(record):
+>       return _validate_record(record)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {}
+
+    def _validate_record(record):
+>       raise ValueError("record missing required field: account_id")
+E       ValueError: record missing required field: account_id
+
+test_regression.py:8: ValueError
+--------------------------------------- Captured stdout call ---------------------------------------
+Reading record fixture 9; original payload preserved in the captured log.
+____________________________________ test_accounts[account-00] _____________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 0; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-01] _____________________________________
+
+case = 1
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 1; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-02] _____________________________________
+
+case = 2
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 2; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-03] _____________________________________
+
+case = 3
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 3; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-04] _____________________________________
+
+case = 4
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 4; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-05] _____________________________________
+
+case = 5
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 5; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-06] _____________________________________
+
+case = 6
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 6; original lookup details preserved in the captured log.
+____________________________________ test_accounts[account-07] _____________________________________
+
+case = 7
+
+    @pytest.mark.parametrize("case", range(8), ids=lambda case: f"account-{case:02d}")
+    def test_accounts(case):
+        print(f"Loading account fixture {case}; original lookup details preserved in the captured log.")
+>       _load_account("primary")
+
+test_regression.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _load_account(name):
+>       return _lookup_account(name)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'primary'
+
+    def _lookup_account(name):
+>       raise LookupError("account index is unavailable")
+E       LookupError: account index is unavailable
+
+test_regression.py:19: LookupError
+--------------------------------------- Captured stdout call ---------------------------------------
+Loading account fixture 7; original lookup details preserved in the captured log.
+________________________________ test_transactions[transaction-00] _________________________________
+
+case = 0
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 0; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-01] _________________________________
+
+case = 1
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 1; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-02] _________________________________
+
+case = 2
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 2; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-03] _________________________________
+
+case = 3
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 3; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-04] _________________________________
+
+case = 4
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 4; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-05] _________________________________
+
+case = 5
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 5; original journal details preserved in the captured log.
+________________________________ test_transactions[transaction-06] _________________________________
+
+case = 6
+
+    @pytest.mark.parametrize("case", range(7), ids=lambda case: f"transaction-{case:02d}")
+    def test_transactions(case):
+        print(f"Writing transaction fixture {case}; original journal details preserved in the captured log.")
+>       _write_transaction()
+
+test_regression.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _write_transaction():
+>       return _commit_transaction()
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_regression.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _commit_transaction():
+>       raise RuntimeError("transaction journal is read-only")
+E       RuntimeError: transaction journal is read-only
+
+test_regression.py:30: RuntimeError
+--------------------------------------- Captured stdout call ---------------------------------------
+Writing transaction fixture 6; original journal details preserved in the captured log.
+===================================== short test summary info ======================================
+FAILED test_regression.py::test_records[record-00] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-01] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-02] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-03] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-04] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-05] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-06] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-07] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-08] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_records[record-09] - ValueError: record missing required field: a...
+FAILED test_regression.py::test_accounts[account-00] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-01] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-02] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-03] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-04] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-05] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-06] - LookupError: account index is unavailable
+FAILED test_regression.py::test_accounts[account-07] - LookupError: account index is unavailable
+FAILED test_regression.py::test_transactions[transaction-00] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-01] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-02] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-03] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-04] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-05] - RuntimeError: transaction journal ...
+FAILED test_regression.py::test_transactions[transaction-06] - RuntimeError: transaction journal ...
+================================== 25 failed, 202 passed in 0.14s ==================================

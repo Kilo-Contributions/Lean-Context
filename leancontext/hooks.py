@@ -104,11 +104,11 @@ def handle_claude_hook(payload: dict, *, max_chars: int = 6000,
         })
         notice = f"\n[Raw Claude hook JSON: {raw_ref}]\n"
         view = compact(stdout, store=store, max_chars=max_chars - len(notice),
-                       kind="claude-bash-output", metadata={"raw_hook_ref": raw_ref})
+                       kind="claude-bash-output", metadata={"raw_hook_ref": raw_ref, "command": command})
         if not view.changed:
             return {}
         text = view.text + notice
-        if len(text) > max_chars or len(text) >= len(stdout):
+        if (len(text) > max_chars and not view.budget_exceeded) or len(text) >= len(stdout):
             return {}
         replacement = deepcopy(response)
         replacement["stdout"] = text
